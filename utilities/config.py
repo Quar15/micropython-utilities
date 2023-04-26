@@ -1,0 +1,3 @@
+WIFI_SSID = ""
+WIFI_PWD = ""
+MAX_RETRIES = 5
