@@ -27,7 +27,9 @@ def blink_loop(pin = "LED", exit_state: bool = True):
 
 
 def start_blinking(pin = "LED", exit_state: bool = True):
-    if BLINKER_LOCK.locked() or SECOND_THREAD_LOCK.locked(): return False
+    if BLINKER_LOCK.locked():
+        print(f"@ERROR: BLINKER_LOCK ({BLINKER_LOCK.locked()}) is locked!")
+        return False
 
     SECOND_THREAD_LOCK.acquire()
     _thread.start_new_thread(blink_loop, (pin, exit_state, ))
@@ -38,4 +40,3 @@ def stop_blinking():
     BLINKER_LOCK.acquire()
     time.sleep(BLINK_DELAY + 0.1)
     BLINKER_LOCK.release()
-
