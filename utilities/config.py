@@ -1,3 +1,7 @@
+PICO_ID = 1
+PICO_NAME = "Pico"
+
 WIFI_SSID = ""
 WIFI_PWD = ""
+WIFI_COUNTRY = "PL"
 MAX_RETRIES = 5
