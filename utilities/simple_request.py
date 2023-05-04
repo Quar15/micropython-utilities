@@ -1,23 +1,22 @@
-# import urequests as requests
-import requests
+import urequests as requests
+# import requests
 from utilities.threads import SECOND_THREAD_LOCK, start_thread
 
-class Request:
-    @staticmethod
-    def get(url: str):
-        return requests.get(url)
 
-    @staticmethod
-    def post(url: str, data: str):
-        return requests.post(url, data=data)
+def get(url: str):
+    return requests.get(url)
 
-    @staticmethod
-    def put(url: str, data: str):
-        return requests.put(url, data=data)
 
-    @staticmethod
-    def delete(url: str, data: str):
-        return requests.delete(url, data=data)
+def post(url: str, data: str):
+    return requests.post(url, data=data)
+
+
+def put(url: str, data: str):
+    return requests.put(url, data=data)
+
+
+def delete(url: str, data: str):
+    return requests.delete(url, data=data)
 
 
 class ThreadRequest:
